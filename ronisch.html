@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mi Proyecto de Vida - Ronisch Morales</title>
+
+<!-- BOOTSTRAP -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- ICONOS -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<!-- FUENTE -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ========================= */
+/* FONDO ANIMADO ARCOIRIS */
+/* ========================= */
+
+body{
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
+    font-family:'Poppins',sans-serif;
+    background: linear-gradient(
+        45deg,
+        #ff0000,
+        #ff7300,
+        #fffb00,
+        #48ff00,
+        #00ffd5,
+        #002bff,
+        #7a00ff,
+        #ff00c8
+    );
+    background-size: 400% 400%;
+    animation: fondoArcoiris 12s ease infinite;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
+
+/* ANIMACION DEL FONDO */
+
+@keyframes fondoArcoiris{
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+/* ========================= */
+/* ESTRELLAS */
+/* ========================= */
+
+.star{
+    position:absolute;
+    color:white;
+    font-size:20px;
+    animation: mover 8s linear infinite;
+    opacity:0.8;
+}
+
+/* CARITAS */
+
+.face{
+    position:absolute;
+    font-size:28px;
+    animation: mover 12s linear infinite;
+}
+
+/* ANIMACION */
+
+@keyframes mover{
+    from{
+        transform:translateY(100vh) rotate(0deg);
+    }
+
+    to{
+        transform:translateY(-120vh) rotate(360deg);
+    }
+}
+
+/* ========================= */
+/* TARJETA PRINCIPAL */
+/* ========================= */
+
+.container-card{
+    position:relative;
+    z-index:10;
+    width:100%;
+    max-width:950px;
+    background:rgba(255,255,255,0.95);
+    border-radius:30px;
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(0,0,0,0.35);
+    backdrop-filter: blur(10px);
+    animation: aparecer 1s ease;
+}
+
+/* APARECER */
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ========================= */
+/* ENCABEZADO CON FOTO */
+/* ========================= */
+
+.header{
+    background:linear-gradient(135deg,#ff00c8,#7a00ff);
+    color:white;
+    text-align:center;
+    padding:40px 30px 35px 30px;
+    position: relative;
+}
+
+/* Contenedor de la imagen en cabecera */
+.header-image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Marco circular para la foto en el banner */
+.header-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: white;
+    padding: 5px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.header-photo:hover {
+    transform: scale(1.03);
+}
+
+.header-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    border: 2px solid #fff;
+}
+
+.header h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    word-break: break-word;
+}
+
+.header p {
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+/* ========================= */
+/* CONTENIDO */
+/* ========================= */
+
+.content{
+    padding:35px;
+}
+
+/* TITULOS */
+
+.section-title{
+    color:#7a00ff;
+    font-weight:bold;
+    margin-top:35px;
+    margin-bottom:18px;
+    border-left:7px solid #ff00c8;
+    padding-left:12px;
+    font-size:28px;
+}
+
+/* CAJA DE INFO (sin foto aquí, solo datos) */
+
+.info-box{
+    background:#f8f9ff;
+    border:3px solid #d6d6ff;
+    border-radius:20px;
+    padding:20px;
+}
+
+.info-box p {
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+
+/* PARRAFOS */
+
+.text{
+    font-size:18px;
+    line-height:1.9;
+    color:#333;
+}
+
+/* LISTA */
+
+ul li{
+    margin-bottom:12px;
+    font-size:18px;
+}
+
+/* ICONOS */
+
+.icon{
+    color:#ff00c8;
+    margin-right:10px;
+}
+
+/* PIE */
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#f3f3f3;
+    color:#555;
+    font-weight:600;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .header h1{
+        font-size:32px;
+    }
+
+    .content{
+        padding:20px;
+    }
+
+    .section-title{
+        font-size:22px;
+    }
+    
+    .header-photo {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ESTRELLAS -->
+<div class="star" style="left:5%; animation-duration:10s;">⭐</div>
+<div class="star" style="left:15%; animation-duration:7s;">✨</div>
+<div class="star" style="left:25%; animation-duration:12s;">⭐</div>
+<div class="star" style="left:40%; animation-duration:9s;">✨</div>
+<div class="star" style="left:60%; animation-duration:11s;">⭐</div>
+<div class="star" style="left:80%; animation-duration:8s;">✨</div>
+<div class="star" style="left:90%; animation-duration:14s;">⭐</div>
+
+<!-- CARITAS -->
+<div class="face" style="left:10%; animation-duration:15s;">😊</div>
+<div class="face" style="left:30%; animation-duration:11s;">😄</div>
+<div class="face" style="left:50%; animation-duration:13s;">😁</div>
+<div class="face" style="left:70%; animation-duration:16s;">😎</div>
+<div class="face" style="left:85%; animation-duration:12s;">🥳</div>
+
+<!-- TARJETA -->
+<div class="container-card">
+
+    <!-- ENCABEZADO CON FOTO ARRIBA (BANNER) -->
+    <div class="header">
+        <!-- Imagen en la parte superior del banner -->
+        <div class="header-image">
+            <div class="header-photo">
+                <img src="tu-foto-jpg.jpeg" alt="Foto de Ronisch Morales">
+            </div>
+        </div>
+
+        <h1>
+            <i class="fa-solid fa-rainbow"></i>
+            Mi Proyecto de Vida
+        </h1>
+
+        <p>
+            <i class="fa-solid fa-user"></i>
+            Ronisch Andres Morales Namundia
+        </p>
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="content">
+
+        <!-- DATOS PERSONALES -->
+        <h2 class="section-title">
+            <i class="fa-solid fa-id-card icon"></i>
+            Datos Personales
+        </h2>
+
+        <div class="info-box">
+            <p><strong>👤 Nombre:</strong> Ronisch Andres Morales Namundia</p>
+            <p><strong>📧 Correo:</strong> ronischandresmoralesmorales@gmail.com</p>
+            <p><strong>🎂 Edad:</strong> 17 años</p>
+            <p><strong>📅 Nacimiento:</strong> 28/Octubre/2008</p>
+            <p><strong>🪪 Tarjeta de identidad:</strong> 1057757644</p>
+            <p><strong>🌎 Comunidad:</strong> La Pampa</p>
+            <p><strong>📍 Municipio:</strong> Belalcázar, Caldas</p>
+            <p><strong>🪶 Pertenencia étnica:</strong> Indígena</p>
+        </div>
+
+        <!-- SUEÑO -->
+        <h2 class="section-title">
+            <i class="fa-solid fa-stethoscope icon"></i>
+            Mi Sueño Profesional
+        </h2>
+
+        <p class="text">
+            Mi proyecto de vida es convertirme en veterinario porque amo los animales 
+            y quiero ayudarlos a tener una vida saludable.
+        </p>
+
+        <p class="text">
+            Sueño con estudiar medicina veterinaria para apoyar a las comunidades rurales 
+            y ayudar a los animales que necesitan cuidado y protección.
+        </p>
+
+        <!-- DIFICULTADES -->
+        <h2 class="section-title">
+            <i class="fa-solid fa-heart-crack icon"></i>
+            Dificultades
+        </h2>
+
+        <p class="text">
+            Mi familia es humilde y actualmente tenemos dificultades económicas para pagar 
+            estudios universitarios.
+        </p>
+
+        <p class="text">
+            Aunque el camino es difícil, no quiero rendirme y seguiré luchando por mis sueños.
+        </p>
+
+        <!-- METAS -->
+        <h2 class="section-title">
+            <i class="fa-solid fa-trophy icon"></i>
+            Mis Metas
+        </h2>
+
+        <ul>
+            <li>🎓 Terminar el bachillerato.</li>
+            <li>🏫 Entrar a una universidad.</li>
+            <li>💰 Conseguir becas.</li>
+            <li>🐶 Ser veterinario profesional.</li>
+            <li>❤️ Ayudar a mi familia.</li>
+            <li>🌟 Servir a mi comunidad.</li>
+        </ul>
+
+        <!-- CONCLUSION -->
+        <h2 class="section-title">
+            <i class="fa-solid fa-star icon"></i>
+            Conclusión
+        </h2>
+
+        <p class="text">
+            Mi sueño es ser veterinario y lucharé por alcanzarlo. 
+            Con esfuerzo, disciplina y fe quiero construir un mejor futuro para mí, 
+            mi familia y mi comunidad.
+        </p>
+
+    </div>
+
+    <!-- PIE -->
+    <footer>
+        🌈 Proyecto de Vida 2026 ✨
+    </footer>
+
+</div>
+
+</body>
+</html>
